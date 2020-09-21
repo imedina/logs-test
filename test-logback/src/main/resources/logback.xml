@@ -1,0 +1,27 @@
+<configuration>
+
+    <appender name="RawJson" class="ch.qos.logback.core.FileAppender">
+        <file>logs/app.logback.json</file>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <customFields>{"env":"prod"}</customFields>
+        </encoder>
+    </appender>
+    <appender name="RawFile" class="ch.qos.logback.core.FileAppender">
+        <file>logs/app.logback.log</file>
+        <append>true</append>
+        <encoder>
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+        </encoder>
+    </appender>
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="DEBUG">
+        <appender-ref ref="RawFile" />
+        <appender-ref ref="RawJson" />
+        <appender-ref ref="Console" />
+    </root>
+</configuration>
