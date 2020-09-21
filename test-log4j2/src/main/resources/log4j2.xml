@@ -5,11 +5,11 @@
         <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5p %c{1}:%L - %m%n"/>
     </Console>
 
-    <File name="FileRaw" fileName="logs/app.log4j2.log" immediateFlush="true">
+    <File name="FileRaw" fileName="../logs/app.log4j2.log" immediateFlush="true">
         <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
     </File>
 
-    <File name="FileJson" fileName="logs/app.log4j2.json" immediateFlush="true">
+    <File name="FileJson" fileName="../logs/app.log4j2.json" immediateFlush="true">
         <JSONLayout compact="true" eventEol="true" properties="true" stacktraceAsString="true"/>
     </File>
 </Appenders>

@@ -11,11 +11,13 @@ public class MyApplication {
     }
 
     public void run() throws InterruptedException {
-        LOGGER.warn("Hello World!");
+        LOGGER.info("Hello World!");
         Thread t = new Thread("my-thread") {
             @Override
             public void run() {
                 myFunction4();
+                LOGGER.warn("Try again");
+                myFunction2();
             }
         };
         t.start();
@@ -39,7 +41,7 @@ public class MyApplication {
         try {
             otherFunction2();
         } catch (Exception e) {
-            LOGGER.warn("This is an exception", new Exception("DummyException", e));
+            LOGGER.error("This is an exception", new Exception("DummyException", e));
         }
     }
 

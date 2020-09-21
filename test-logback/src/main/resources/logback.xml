@@ -1,13 +1,13 @@
 <configuration>
 
     <appender name="RawJson" class="ch.qos.logback.core.FileAppender">
-        <file>logs/app.logback.json</file>
+        <file>../logs/app.logback.json</file>
         <encoder class="net.logstash.logback.encoder.LogstashEncoder">
             <customFields>{"env":"prod"}</customFields>
         </encoder>
     </appender>
     <appender name="RawFile" class="ch.qos.logback.core.FileAppender">
-        <file>logs/app.logback.log</file>
+        <file>../logs/app.logback.log</file>
         <append>true</append>
         <encoder>
             <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
